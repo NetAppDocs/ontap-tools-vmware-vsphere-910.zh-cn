@@ -53,11 +53,34 @@
   <link rel="stylesheet" href="/zh-cn/ontap-tools-vmware-vsphere-910/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/zh-cn/ontap-tools-vmware-vsphere-910/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
-    if (document.location.hostname === "docs.netapp.com") {
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
       onetrustConsent.type = "text/javascript";
-      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
       head.appendChild(onetrustConsent);
 
       var onetrustScript = document.createElement("script");
@@ -65,30 +88,11 @@
       onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
       onetrustScript.charset = "UTF-8";
       onetrustScript.dataset.documentLanguage = "true";
-      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      onetrustScript.dataset.domainScript = consentId;
       head.appendChild(onetrustScript);
-    }
-
-    function OptanonWrapper() { }
-
-    if (document.location.hostname === "docs.netapp.com") {
-      var adobe = document.createElement("script");
-      adobe.type = "text/plain";
-      adobe.className = "optanon-category-C0002";
-      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-      head.appendChild(adobe);
-
-      var google = document.createElement("script");
-      google.type = "text/plain";
-      google.className = "optanon-category-C0002";
-      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
-      head.appendChild(google);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-81697994-3');
-    }
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -169,7 +173,38 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere-910/issues/new?body=Page%3A%20[配置灾难恢复设置](https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_manage_disaster_recovery_setup_using_srm.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere-910/blob/main/concepts/concept_manage_disaster_recovery_setup_using_srm.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
+  <div class="custom-dropdown-select unselected" title="适用于 VMware vSphere 的 ONTAP 工具 9.10">
+    <label>版本</label>
+    <span translate="no" class="notranslate">适用于 VMware vSphere 的 ONTAP 工具 9.10</span>
+    <img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
+    <img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
+  </div>
+
+  <ul class="custom-dropdown-menu"><li>
+      
+      <a href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_manage_disaster_recovery_setup_using_srm.html" target="_self">
+        <span translate="no" class="notranslate"><span>适用于 VMware vSphere 的 ONTAP 工具</span><span class="version"> 9.10</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere/concepts/concept_manage_disaster_recovery_setup_using_srm.html" target="_self">
+        <span translate="no" class="notranslate"><span>适用于 VMware vSphere 的 ONTAP 工具</span><span class="version"> 9.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere-98/concepts/concept_manage_disaster_recovery_setup_using_srm.html" target="_self">
+        <span translate="no" class="notranslate"><span>适用于 VMware vSphere 的 ONTAP 工具</span><span class="version"> 9.8</span></span>
+      </a>
+                     
+    </li>
+    
+  </ul>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere-910/issues/new?body=Page%3A%20[配置灾难恢复设置](https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_manage_disaster_recovery_setup_using_srm.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere-910/blob/main/concepts/concept_manage_disaster_recovery_setup_using_srm.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -341,6 +376,7 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/collapse.png" alt="折叠导航面板"></button>
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
     <img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/pdf.png" alt="" width="16" height="16"/>可用的 PDF<span>
@@ -1090,263 +1126,875 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/index.html">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="适用于 VMware vSphere 的 ONTAP Tools 9.10 文档"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/index.html">
         适用于 VMware vSphere 的 ONTAP Tools 9.10 文档
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/release_notes.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="发行说明"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/release_notes.html">
         发行说明
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 概念</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_virtual_storage_console_overview.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具概述"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_virtual_storage_console_overview.html">
         ONTAP 工具概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_configure_vvols_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VVOL 的 VASA Provider 配置"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_configure_vvols_datastores.html">
         VVOL 的 VASA Provider 配置
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_manage_disaster_recovery_setup_using_srm.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="用于灾难恢复的 Storage Replication Adapter"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_manage_disaster_recovery_setup_using_srm.html">
         用于灾难恢复的 Storage Replication Adapter
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="基于角色的访问控制"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 基于角色的访问控制</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具基于角色的访问控制概述"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html">
         ONTAP 工具基于角色的访问控制概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_components_that_make_up_vcenter_server_permissions.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Server 权限的组成部分"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_components_that_make_up_vcenter_server_permissions.html">
         vCenter Server 权限的组成部分
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_key_points_about_assigning_and_modifying_permissions.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="有关为 vCenter Server 分配和修改权限的要点"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_key_points_about_assigning_and_modifying_permissions.html">
         有关为 vCenter Server 分配和修改权限的要点
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_standard_roles_packaged_with_ontap_tools_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具附带的标准角色"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_standard_roles_packaged_with_ontap_tools_for_vmware_vsphere.html">
         ONTAP 工具附带的标准角色
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_privileges_required_for_vsc_tasks.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VSC 任务所需的特权"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_privileges_required_for_vsc_tasks.html">
         VSC 任务所需的特权
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 存储系统和 vSphere 对象的权限"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html">
         ONTAP 存储系统和 vSphere 对象的权限
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何为 ONTAP 工具配置基于角色的访问控制"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html">
         如何为 ONTAP 工具配置基于角色的访问控制
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为 ONTAP 工具配置高可用性"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html">
         为 ONTAP 工具配置高可用性
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具支持的 MetroCluster 配置"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html">
         ONTAP 工具支持的 MetroCluster 配置
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署和升级 ONTAP 工具"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 部署和升级 ONTAP 工具</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_installation_workflow_for_new_users.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="适用于 VMware vSphere 的 ONTAP 工具的新用户部署工作流"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_installation_workflow_for_new_users.html">
         适用于 VMware vSphere 的 ONTAP 工具的新用户部署工作流
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="适用于现有 ONTAP 工具用户的部署工作流"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html">
         适用于现有 ONTAP 工具用户的部署工作流
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/vmware_cloud_foundation_mode_deployment.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="适用于 ONTAP 工具的 VMware 云基础部署模式"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/vmware_cloud_foundation_mode_deployment.html">
         适用于 ONTAP 工具的 VMware 云基础部署模式
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/qsg.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具快速入门"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/qsg.html">
         ONTAP 工具快速入门
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署 ONTAP 工具的要求"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 部署 ONTAP 工具的要求</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/reference_port_requirements_for_vsc.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VSC 的端口要求"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/reference_port_requirements_for_vsc.html">
         VSC 的端口要求
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具的空间和规模估算要求"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html">
         ONTAP 工具的空间和规模估算要求
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_supported_storage_system_and_applications.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具支持的存储系统，许可和应用程序"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_supported_storage_system_and_applications.html">
         ONTAP 工具支持的存储系统，许可和应用程序
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/reference_considerations_for_deploying_ontap_tools_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署 ONTAP 工具的注意事项"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/reference_considerations_for_deploying_ontap_tools_for_vmware_vsphere.html">
         部署 ONTAP 工具的注意事项
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署 ONTAP 工具"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 部署 ONTAP 工具</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_how_to_download_ontap_tools.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何下载 ONTAP 工具"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/concept_how_to_download_ontap_tools.html">
         如何下载 ONTAP 工具
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_deploy_ontap_tools.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何部署 ONTAP 工具"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_deploy_ontap_tools.html">
         如何部署 ONTAP 工具
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="启用 VASA Provider 以配置虚拟数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html">
         启用 VASA Provider 以配置虚拟数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_install_the_nfs_vaai_plug_in.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安装 NFS VAAI 插件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_install_the_nfs_vaai_plug_in.html">
         安装 NFS VAAI 插件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="清除 vSphere 缓存的已下载插件软件包"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html">
         清除 vSphere 缓存的已下载插件软件包
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升级 ONTAP 工具"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 升级 ONTAP 工具</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升级到最新版本的 ONTAP 工具"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html">
         升级到最新版本的 ONTAP 工具
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_upgrade_storage_replication_adapter.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升级 Storage Replication Adapter"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/deploy/task_upgrade_storage_replication_adapter.html">
         升级 Storage Replication Adapter
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 ONTAP 工具"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置 ONTAP 工具</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_workflow_for_configuring_the_unified_appliance.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="用于配置 ONTAP 工具的工作流"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_workflow_for_configuring_the_unified_appliance.html">
         用于配置 ONTAP 工具的工作流
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 ESXi 设置"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置 ESXi 设置</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_esx_server_multipathing_and_timeout_settings.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 ESXi 服务器多路径和超时设置"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_esx_server_multipathing_and_timeout_settings.html">
         配置 ESXi 服务器多路径和超时设置
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用 ONTAP 工具设置的 ESXi 主机值"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html">
         使用 ONTAP 工具设置的 ESXi 主机值
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置子操作系统"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置子操作系统</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_configure_guest_operating_system_scripts.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置子操作系统脚本"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_configure_guest_operating_system_scripts.html">
         配置子操作系统脚本
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_windows.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置 Windows 子操作系统的超时值"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_windows.html">
         设置 Windows 子操作系统的超时值
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_solaris.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置 Solaris 子操作系统的超时值"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_solaris.html">
         设置 Solaris 子操作系统的超时值
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_rhel4_or_sles9.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为 Linux 子操作系统设置超时值"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_run_the_gos_timeout_scripts_for_rhel4_or_sles9.html">
         为 Linux 子操作系统设置超时值
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_requirements_for_registering_vsc_in_multiple_vcenter_servers_environment.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在多个 vCenter Server 环境中注册 VSC 的要求"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_requirements_for_registering_vsc_in_multiple_vcenter_servers_environment.html">
         在多个 vCenter Server 环境中注册 VSC 的要求
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 ONTAP 工具首选项文件"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置 ONTAP 工具首选项文件</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用首选项文件设置 IPv4 或 IPv6"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html">
         使用首选项文件设置 IPv4 或 IPv6
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/add_different_subnets.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加不同的子网"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/add_different_subnets.html">
         添加不同的子网
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_enable_datastore_mounting_across_different_subnets.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在不同子网之间启用数据存储库挂载"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_enable_datastore_mounting_across_different_subnets.html">
         在不同子网之间启用数据存储库挂载
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_regenerate_an_ssl_certificate_for_vsc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为 VSC 重新生成 SSL 证书"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_regenerate_an_ssl_certificate_for_vsc.html">
         为 VSC 重新生成 SSL 证书
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置存储系统"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置存储系统</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具存储系统概述"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html">
         ONTAP 工具存储系统概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_set_default_credentials_for_storage_systems.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置存储系统的默认凭据"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_set_default_credentials_for_storage_systems.html">
         设置存储系统的默认凭据
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_add_storage_systems.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将存储系统添加到 VSC"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_add_storage_systems.html">
         将存储系统添加到 VSC
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_discover_storage_systems_and_hosts.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="发现存储系统和主机"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_discover_storage_systems_and_hosts.html">
         发现存储系统和主机
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_refresh_the_storage_system_display.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="刷新存储系统显示内容"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_refresh_the_storage_system_display.html">
         刷新存储系统显示内容
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_alarm_thresholds.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置警报阈值"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_alarm_thresholds.html">
         配置警报阈值
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_user_role_and_privileges.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置用户角色和权限"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_configure_user_role_and_privileges.html">
         配置用户角色和权限
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置存储功能配置文件"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置存储功能配置文件</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_configure_storage_capability_profiles.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="存储功能配置文件概述"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/concept_configure_storage_capability_profiles.html">
         存储功能配置文件概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_create_storage_capability_profiles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="创建存储功能配置文件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_create_storage_capability_profiles.html">
         创建存储功能配置文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_automatically_generating_scps.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自动生成存储功能配置文件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_automatically_generating_scps.html">
         自动生成存储功能配置文件
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置数据存储库"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置数据存储库</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_provision_datastores.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置传统数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_provision_datastores.html">
         配置传统数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_map_storage_to_storage_capability_profiles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将数据存储库映射到存储功能配置文件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_map_storage_to_storage_capability_profiles.html">
         将数据存储库映射到存储功能配置文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_assign_qos_policies.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="分配 QoS 策略"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_assign_qos_policies.html">
         分配 QoS 策略
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_check_for_datastore_compliance_with_the_mapped_storage_capability_profile.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="验证数据存储库是否符合映射的存储功能配置文件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_check_for_datastore_compliance_with_the_mapped_storage_capability_profile.html">
         验证数据存储库是否符合映射的存储功能配置文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_provision_vvols_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 VVOL 数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/task_provision_vvols_datastores.html">
         配置 VVOL 数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_rebalance_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="重新平衡 VVol 数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_rebalance_vvols_datastore.html">
         重新平衡 VVol 数据存储库
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保护数据存储库和虚拟机"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 保护数据存储库和虚拟机</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_enable_storage_replication_adapter.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="启用 Storage Replication Adapter 以保护数据存储库"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_enable_storage_replication_adapter.html">
         启用 Storage Replication Adapter 以保护数据存储库
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置用于灾难恢复的存储系统"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置用于灾难恢复的存储系统</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_storage_replication_adapter_for_san_environment.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为 SAN 和 NAS 配置存储系统"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_storage_replication_adapter_for_san_environment.html">
         为 SAN 和 NAS 配置存储系统
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为高度扩展的环境配置存储"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html">
         为高度扩展的环境配置存储
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_sra_on_srm_appliance.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在 SRM 设备上配置 SRA"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_sra_on_srm_appliance.html">
         在 SRM 设备上配置 SRA
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_update_sra_credentials.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="更新 SRA 凭据"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_update_sra_credentials.html">
         更新 SRA 凭据
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/concept_migration_of_disaster_recovery_setup_from_windows_to_appliance.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将 Windows SRM 迁移到 SRM 设备"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/concept_migration_of_disaster_recovery_setup_from_windows_to_appliance.html">
         将 Windows SRM 迁移到 SRM 设备
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/concept_configure_replication_for_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为 VVOL 数据存储库配置复制以保护虚拟机"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/concept_configure_replication_for_vvols_datastore.html">
         为 VVOL 数据存储库配置复制以保护虚拟机
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/configure_vvols_replication_existing_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="为现有数据存储库配置 VVol 复制"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/configure_vvols_replication_existing_datastore.html">
         为现有数据存储库配置 VVol 复制
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_protect_non_protected_virtual_machines.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保护未受保护的虚拟机"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_protect_non_protected_virtual_machines.html">
         保护未受保护的虚拟机
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置受保护站点和恢复站点"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置受保护站点和恢复站点</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_vm_storage_policies.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置 VM 存储策略"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_vm_storage_policies.html">
         配置 VM 存储策略
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_protection_groups.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置保护组"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_protection_groups.html">
         配置保护组
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_pair_protected_and_recovery_sites.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将受保护站点和恢复站点配对"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_pair_protected_and_recovery_sites.html">
         将受保护站点和恢复站点配对
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置受保护站点和恢复站点资源"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 配置受保护站点和恢复站点资源</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_network_mappings.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置网络映射"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_network_mappings.html">
         配置网络映射
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_folder_mappings.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置文件夹映射"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_folder_mappings.html">
         配置文件夹映射
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_resource_mappings.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置资源映射"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_resource_mappings.html">
         配置资源映射
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_map_storage_policies.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="映射存储策略"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_map_storage_policies.html">
         映射存储策略
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_placeholder_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置占位数据存储库"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_placeholder_datastores.html">
         配置占位数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_array_manager.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用阵列管理器配置 SRA"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_configure_array_manager.html">
         使用阵列管理器配置 SRA
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_verify_the_replicated_storage_environment.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="验证复制的存储系统"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/protect/task_verify_the_replicated_storage_environment.html">
         验证复制的存储系统
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理 ONTAP 工具"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 管理 ONTAP 工具</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理数据存储库"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 管理数据存储库</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_mount_datastores_on_host.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在其他主机上挂载数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_mount_datastores_on_host.html">
         在其他主机上挂载数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_resize_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="调整数据存储库大小"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_resize_datastores.html">
         调整数据存储库大小
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_edit_a_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="编辑 VVOL 数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_edit_a_vvols_datastore.html">
         编辑 VVOL 数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_add_storage_to_a_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="向 VVOL 数据存储库添加存储"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_add_storage_to_a_vvols_datastore.html">
         向 VVOL 数据存储库添加存储
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_remove_storage_from_a_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="从 VVol 数据存储库中删除存储"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_remove_storage_from_a_vvols_datastore.html">
         从 VVol 数据存储库中删除存储
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_mount_a_vvols_datastore.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="挂载 VVOL 数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_mount_a_vvols_datastore.html">
         挂载 VVOL 数据存储库
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理虚拟机"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 管理虚拟机</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/reference_considerations_for_migrating_virtual_machines.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="迁移或克隆虚拟机的注意事项"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/reference_considerations_for_migrating_virtual_machines.html">
         迁移或克隆虚拟机的注意事项
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_migrate_standard_virtual_machines_to_vvols_datastores.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将传统虚拟机迁移到 VVOL 数据存储库"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_migrate_standard_virtual_machines_to_vvols_datastores.html">
         将传统虚拟机迁移到 VVOL 数据存储库
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="迁移具有较旧存储功能配置文件的虚拟机"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html">
         迁移具有较旧存储功能配置文件的虚拟机
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_edit_esxi_host_settings.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="修改 ESXi 主机设置"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_edit_esxi_host_settings.html">
         修改 ESXi 主机设置
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="访问 ONTAP 工具维护控制台"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 访问 ONTAP 工具维护控制台</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具维护控制台概述"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html">
         ONTAP 工具维护控制台概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/concept_virtual_storage_console_and_vasa_provider_log_files.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VSC 和 VASA Provider 日志文件"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/concept_virtual_storage_console_and_vasa_provider_log_files.html">
         VSC 和 VASA Provider 日志文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_change_the_administrative_password.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="更改管理员密码"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_change_the_administrative_password.html">
         更改管理员密码
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_configure_vasa_provider_to_work_with_ssh.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="将 VASA Provider 配置为使用 SSH"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_configure_vasa_provider_to_work_with_ssh.html">
         将 VASA Provider 配置为使用 SSH
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置远程诊断访问"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html">
         配置远程诊断访问
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_collect_the_log_files.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="收集日志文件"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_collect_the_log_files.html">
         收集日志文件
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="监控数据存储库和 VVol 报告的性能"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> 监控数据存储库和 VVol 报告的性能</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/concept_virtual_storage_console_reports.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具数据存储库和虚拟机报告概述"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/concept_virtual_storage_console_reports.html">
         ONTAP 工具数据存储库和虚拟机报告概述
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_monitor_datastores_using_the_traditional_dashboard.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用传统信息板分析性能数据"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_monitor_datastores_using_the_traditional_dashboard.html">
         使用传统信息板分析性能数据
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用 VVol 信息板分析性能数据"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html">
         使用 VVol 信息板分析性能数据
-      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/legal-notices.html">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律声明"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/ontap-tools-vmware-vsphere-910/legal-notices.html">
         法律声明
       </a></li></ul>
 </div>
@@ -1365,8 +2013,9 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content">
+    <!-- Begin of page container --><article class="page-content" id="main">
       <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/zh-cn/ontap-tools-vmware-vsphere-910/images/expand.png" alt="展开导航面板"></button>
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
