@@ -1978,4 +1978,5 @@
   <block id="d9f3e338f746bd45726b28a4c9827ce1" category="sidebar">VSC 和 VASA Provider 日志文件</block>
   <block id="aac0bfa935c0891ccd1dbe6d4b9dc089" category="sidebar">监控数据存储库和 VVol 报告的性能</block>
   <block id="03e71fcc3229d7261096bb72d8cbfaf4" category="sidebar">ONTAP 工具数据存储库和虚拟机报告概述</block>
+  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">适用于 VMware vSphere 的 ONTAP 工具</block>
 </blocks>
