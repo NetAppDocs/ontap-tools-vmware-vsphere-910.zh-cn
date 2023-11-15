@@ -9,9 +9,9 @@ entries:
   - title: 调整数据存储库大小
     url: "/manage/task_resize_datastores.html"
   - title: 编辑 VVOL 数据存储库
-    url: "/manage/task_edit_a_vvols_datastore.html"
+    url: "/manage/task_edit_a_vvol_datastore.html"
   - title: 向 VVOL 数据存储库添加存储
-    url: "/manage/task_add_storage_to_a_vvols_datastore.html"
+    url: "/manage/task_add_storage_to_a_vvol_datastore.html"
   - title: 从 VVol 数据存储库中删除存储
     url: "/manage/task_remove_storage_from_a_vvols_datastore.html"
   - title: 挂载 VVOL 数据存储库

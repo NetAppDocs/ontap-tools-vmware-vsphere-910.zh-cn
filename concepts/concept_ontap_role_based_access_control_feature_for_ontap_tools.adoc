@@ -58,9 +58,6 @@ ONTAP RBAC 仅适用于访问存储系统以及执行与存储相关的 VSC 任�
 link:../configure/task_configure_user_role_and_privileges.html["配置用户角色和权限"]
 
 * 适用于 ONTAP 的 RBAC User Creator 工具（如果使用的是 ONTAP 9.6 或更早版本）
-+
-https://community.netapp.com/t5/Virtualization-Articles-and-Resources/RBAC-User-Creator-tool-for-VSC-VASA-Provider-and-Storage-Replication-Adapter-7-0/ta-p/133203["适用于适用于 VMware vSphere 的 VSC ， VASA Provider 和 Storage Replication Adapter 7.0 的 RBAC User Creator 工具"]
-
 
 
 每个 ONTAP 角色都有一个关联的用户名和密码对，这两个用户名和密码对构成了该角色的凭据。如果不使用这些凭据登录，则无法访问与此角色关联的存储操作。
